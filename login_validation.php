@@ -1,10 +1,10 @@
 <?php
 if(isset($_POST['username']) && isset($_POST['pw'])){
-    $username = $_POST['username'];
-    $password = $_POST['pw'];
-    $cb = isset($_POST['remember'])?1:0;
-    require_once "../dao/connect.php";
-    $query = "SELECT * FROM login WHERE username = '$username' AND password = '$pw' ";
+    $username = $_POST["username"];
+    $password = $_POST["pw"];
+    $cb = isset($_POST["remember"])?1:0;
+    require_once "./dao/connect.php";
+    $query = "SELECT * FROM login WHERE username = '$username' AND password = '$password' ";
     $result = $conn->query($query);
     $row = $result -> fetch_array(MYSQLI_NUM);
     if($row){
@@ -15,11 +15,9 @@ if(isset($_POST['username']) && isset($_POST['pw'])){
         }
         session_start();
         $_SESSION['name'] = $row[0];
-        header("Location: .../index.php");
+        header("Location: ./index.php");
     } 
     else{
-        header("Location: ../login.php?m=error");
+        header("Location: ./login.php?m=error");
     }
 }
-    
-?>
