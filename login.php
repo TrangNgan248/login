@@ -17,6 +17,7 @@
         echo'Sai ten dang nhap hoac mat khau';
     }
     ?>
+    <div id = "formlogin">
     <form action="login_validation.php" method="POST">
         <label>Enter Username</label><br>
         <input type="text" name="username" placeholder="username" required><br>
@@ -25,6 +26,7 @@
         Ghi nhớ đăng nhập: <input type = "checkbox" name = "remember"><br>
         <input type="Submit" value="Login">
     </form>
+    </div>
 </body>
 
 </html>
